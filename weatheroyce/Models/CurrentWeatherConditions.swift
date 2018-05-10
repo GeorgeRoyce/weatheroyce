@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+struct CurrentWeatherConditions {
+    
+    let degreesFahrenheit: Int
+    
+    init(_ raw: RawCurrentWeatherConditions) {
+        degreesFahrenheit = Int(raw.temp_f)
+    }
+    
+}
+
+struct RawCurrentWeatherConditions: Decodable {
+    
+    let temp_f: Float
+    
+}
