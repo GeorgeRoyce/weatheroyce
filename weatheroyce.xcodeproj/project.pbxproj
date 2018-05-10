@@ -15,6 +15,7 @@
 		3AED141820A4C4C40046079A /* weatheroyceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED141720A4C4C40046079A /* weatheroyceTests.swift */; };
 		3AED142720A4CB850046079A /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED142620A4CB850046079A /* WeatherService.swift */; };
 		3AED142920A4D18C0046079A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED142820A4D18C0046079A /* NetworkManager.swift */; };
+		3AED142D20A4DD1E0046079A /* CurrentWeatherConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED142C20A4DD1E0046079A /* CurrentWeatherConditions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		3AED141920A4C4C40046079A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AED142620A4CB850046079A /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		3AED142820A4D18C0046079A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3AED142C20A4DD1E0046079A /* CurrentWeatherConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherConditions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				3AED140E20A4C4C30046079A /* Info.plist */,
 				3AED142B20A4D19E0046079A /* Services */,
 				3AED142A20A4D1910046079A /* Managers */,
+				3AED142E20A4DD220046079A /* Models */,
 			);
 			path = weatheroyce;
 			sourceTree = "<group>";
@@ -148,6 +151,14 @@
 				3AED142620A4CB850046079A /* WeatherService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3AED142E20A4DD220046079A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3AED142C20A4DD1E0046079A /* CurrentWeatherConditions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 			files = (
 				3AED142920A4D18C0046079A /* NetworkManager.swift in Sources */,
 				3AED140520A4C4C20046079A /* CurrentWeatherCondiditions.swift in Sources */,
+				3AED142D20A4DD1E0046079A /* CurrentWeatherConditions.swift in Sources */,
 				3AED142720A4CB850046079A /* WeatherService.swift in Sources */,
 				3AED140320A4C4C20046079A /* AppDelegate.swift in Sources */,
 			);

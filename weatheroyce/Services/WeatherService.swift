@@ -26,12 +26,25 @@ class WeatherService {
         }
         
         NetworkManager.getDataFor(url) { (responseData) in
+            do {
+                let rawIntermediateConditions = try JSONDecoder().decode(RawIntermediateCurrentConditionsInfo.self, from: responseData)
+                let rawCurrentConditions = rawIntermediateConditions.current_observation
+                let currentConditions = CurrentWeatherConditions(rawCurrentConditions)
+                print(currentConditions.degreesFahrenheit)
+            } catch {
+                print("error parsing data: \(error)")
+            }
             
         }
-        
     }
+}
+
+private struct RawIntermediateCurrentConditionsInfo: Decodable {
+    
+    let current_observation: RawCurrentWeatherConditions
     
 }
+
 
 
 
