@@ -12,9 +12,17 @@ class CurrentWeatherCondiditions: UIViewController {
     
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     
+    var weatherService: WeatherService? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        weatherService = WeatherService()
+        weatherService?.getCurrentWeatherConditions { currentConditions in
+            DispatchQueue.main.async {
+                self.currentTemperatureLabel.text = "\(currentConditions.degreesFahrenheit)º"                
+            }
+        }
     }
 }
 

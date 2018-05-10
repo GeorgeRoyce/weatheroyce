@@ -14,7 +14,7 @@ class WeatherService {
     private let wundergroundScheme = "http"
     private let wundergroundHost = "api.wunderground.com"
     
-    func getCurrentWeatherConditions(completion: () -> Void) {
+    func getCurrentWeatherConditions(completion: @escaping (CurrentWeatherConditions) -> Void) {
         var components = URLComponents()
         components.scheme = wundergroundScheme
         components.host = wundergroundHost
@@ -30,7 +30,9 @@ class WeatherService {
                 let rawIntermediateConditions = try JSONDecoder().decode(RawIntermediateCurrentConditionsInfo.self, from: responseData)
                 let rawCurrentConditions = rawIntermediateConditions.current_observation
                 let currentConditions = CurrentWeatherConditions(rawCurrentConditions)
-                print(currentConditions.degreesFahrenheit)
+                
+                completion(currentConditions)
+                
             } catch {
                 print("error parsing data: \(error)")
             }
