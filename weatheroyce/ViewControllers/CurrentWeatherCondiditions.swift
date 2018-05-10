@@ -9,6 +9,9 @@
 import UIKit
 
 class CurrentWeatherCondiditions: UIViewController {
+    
+    @IBOutlet weak var currentTemperatureLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
