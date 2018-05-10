@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkManager {
     
-    class func getDataFor(_ url: URL, completion: (Data) -> Void) {
+    class func getDataFor(_ url: URL, completion: @escaping (Data) -> Void) {
         
         let session = URLSession(configuration: .default)
         let request = URLRequest(url: url)
@@ -18,12 +18,16 @@ class NetworkManager {
         session.dataTask(with: request) { (data, response, error) in
             //do something with the data
             guard error == nil else {
-                print("error from Network Manager: \(error)")
+                print("error from Network Manager: \(String(describing: error))")
                 return
             }
             
-            let json = String(data: data!, encoding: .utf8)
-            print(json)
+            guard let responseData = data else {
+                print("did not have responseData")
+                return
+            }
+            
+            completion(responseData)
             
             }.resume()
         
