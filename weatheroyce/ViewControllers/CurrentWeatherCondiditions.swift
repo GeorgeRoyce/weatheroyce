@@ -11,6 +11,7 @@ import UIKit
 class CurrentWeatherCondiditions: UIViewController {
     
     @IBOutlet weak var currentTemperatureLabel: UILabel!
+    @IBOutlet weak var currentLocationLabel: UILabel!
     
     var weatherService: WeatherService? = nil
 
@@ -20,9 +21,14 @@ class CurrentWeatherCondiditions: UIViewController {
         weatherService = WeatherService()
         weatherService?.getCurrentWeatherConditions { currentConditions in
             DispatchQueue.main.async {
-                self.currentTemperatureLabel.text = "\(currentConditions.degreesFahrenheit)º"                
+                self.updateUIFor(currentConditions)
             }
         }
+    }
+    
+    private func updateUIFor(_ currentConditions: CurrentWeatherConditions) {
+        self.currentTemperatureLabel.text = "\(currentConditions.degreesFahrenheit)º"
+        self.currentLocationLabel.text = "Detroit, MI"
     }
 }
 
