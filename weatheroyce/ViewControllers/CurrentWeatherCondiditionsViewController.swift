@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherCondiditions.swift
+//  CurrentWeatherCondiditionsViewController.swift
 //  weatheroyce
 //
 //  Created by George Royce on 5/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentWeatherCondiditions: UIViewController {
+class CurrentWeatherCondiditionsViewController: UIViewController {
     
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentLocationLabel: UILabel!
