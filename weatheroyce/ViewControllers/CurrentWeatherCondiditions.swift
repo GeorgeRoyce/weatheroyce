@@ -9,9 +9,26 @@
 import UIKit
 
 class CurrentWeatherCondiditions: UIViewController {
+    
+    @IBOutlet weak var currentTemperatureLabel: UILabel!
+    @IBOutlet weak var currentLocationLabel: UILabel!
+    
+    var weatherService: WeatherService? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        weatherService = WeatherService()
+        weatherService?.getCurrentWeatherConditions { currentConditions in
+            DispatchQueue.main.async {
+                self.updateUIFor(currentConditions)
+            }
+        }
+    }
+    
+    private func updateUIFor(_ currentConditions: CurrentWeatherConditions) {
+        self.currentTemperatureLabel.text = "\(currentConditions.degreesFahrenheit)º"
+        self.currentLocationLabel.text = "Detroit, MI"
     }
 }
 
